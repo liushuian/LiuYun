@@ -4,13 +4,23 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 import login from '@/views/Login'
+import Layout from '@/layout'
 
-// import Layout from './'
 
 export const constantRoutes = [
   {
+    path: '/',
+    component: Layout,
+    hidden: true
+  },
+  {
     path: '/login',
     component: login,
+    hidden: true
+  },
+  {
+    path: '*',
+    component: () => import('@/views/error/404'),
     hidden: true
   }
 ]

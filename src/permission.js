@@ -14,6 +14,8 @@ router.beforeEach((to, form, next) => {
     if (to.path === 'login') {
       next({ path: '/' })
       NProgress.done()
+    } else {
+      next()
     }
   } else {
     // 没有token
