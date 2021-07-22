@@ -153,12 +153,14 @@ Vue.use(Backtop);
 Vue.use(PageHeader);
 Vue.use(CascaderPanel);
 
-Vue.use(Loading.directive);
+// Vue.use(Loading.directive);
 
-Vue.prototype.$loading = Loading.service;
-Vue.prototype.$msgbox = MessageBox;
-Vue.prototype.$alert = MessageBox.alert;
-Vue.prototype.$confirm = MessageBox.confirm;
-Vue.prototype.$prompt = MessageBox.prompt;
+// Vue.prototype.$loading = Loading.service;
+const msgbox = MessageBox
+const { alert, confirm, prompt } = msgbox
+Vue.prototype.$msgbox = msgbox;
+Vue.prototype.$alert = alert;
+Vue.prototype.$confirm = confirm;
+Vue.prototype.$prompt = prompt;
 Vue.prototype.$notify = Notification;
 Vue.prototype.$message = Message;

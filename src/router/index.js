@@ -4,14 +4,35 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 import login from '@/views/Login'
-import Layout from '@/layout'
 
+import Layout from '@/layout'
+import index from '@/views/index'
+import report from '@/views/system/Report'
+import roles from '@/views/system/Roles'
 
 export const constantRoutes = [
   {
     path: '/',
     component: Layout,
-    hidden: true
+    redirect: 'index',
+    hidden: true,
+    children: [
+      {
+        path: 'index',
+        component: index,
+        hidden: true
+      },
+      {
+        path: '/report',
+        component: report,
+        hidden: true
+      },
+      {
+        path: '/roles',
+        component: roles,
+        hidden: true
+      },
+    ]
   },
   {
     path: '/login',
