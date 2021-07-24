@@ -47,5 +47,6 @@ export default {
 }
 .el-header {
   background-color: green;
+  border-bottom: 1px solid #ccc;
 }
 </style>
