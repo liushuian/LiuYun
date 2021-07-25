@@ -17,14 +17,29 @@
       <el-col :span="12">
         <el-card class="box-card">
           <div slot="header">
-            <span>ss</span>
+            <span>成绩比率</span>
           </div>
           <div>
             <div style="height: 420px;"></div>
           </div>
         </el-card>
       </el-col>
-
+      <el-col
+        :span="24"
+        class="study"
+      >
+        <el-card class="box-card">
+          <div slot="header">
+            <span>学生来源</span>
+          </div>
+          <div>
+            <div
+              ref="studentSource"
+              style="height: 420px;"
+            ></div>
+          </div>
+        </el-card>
+      </el-col>
     </el-row>
   </div>
 </template>
@@ -45,8 +60,8 @@ export default {
   },
   methods: {
     getEcharts() {
-      let myChart = echarts.init(this.$refs.commar);
-      let option = {
+      let myCommarChart = echarts.init(this.$refs.commar);
+      let commarOption = {
         xAxis: {
           type: 'category',
           data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -63,7 +78,13 @@ export default {
           }
         }]
       }
-      myChart.setOption(option);
+
+      myCommarChart.setOption(commarOption);
+      let studentOption = {
+
+      }
+      let myStudentChart = echarts.init(this.$refs.studentSource)
+      myStudentChart.setOption(studentOption)
     }
   },
 }
@@ -74,5 +95,8 @@ export default {
 }
 .card-title {
   font-size: 16px;
+}
+.study {
+  margin-top: 30px;
 }
 </style>

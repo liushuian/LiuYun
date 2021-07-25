@@ -31,6 +31,7 @@ export default {
   height: 100%;
   position: relative;
   .logout {
+    font-weight: 600;
     cursor: pointer;
     position: absolute;
     right: 20px;
