@@ -61,9 +61,9 @@ export default {
   font-size: 13px;
   border-top: 1px solid #e7eaec;
   padding: 10px 20px;
+  text-align: right;
   > div {
     display: inline-block;
-    float: right;
   }
 }
 </style>
